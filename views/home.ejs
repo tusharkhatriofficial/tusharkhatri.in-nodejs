@@ -67,6 +67,11 @@
         </div>
     </nav>
 
+    <center>
+    <% if(messageSent){ %>
+      <h4 class="success-color">Thanks for reaching out, will get in touch soon!</h4>
+      <% } %>
+    </center>
     <!-- ABOUT -->
     <section class="about full-screen d-lg-flex justify-content-center align-items-center" id="about">
         <div class="container">
@@ -74,7 +79,7 @@
                 
                 <div class="col-lg-7 col-md-12 col-12 d-flex align-items-center">
                     <div class="about-text">
-                        <small class="small-text">Welcome to <span class="mobile-block">my portfolio website!</span></small>
+                        <small class="small-text">This web app is written in <span class="mobile-block">Node.js!</span></small>
                         <h1 class="animated animated-text">
                             <span class="mr-2">Hey folks, I'm</span>
                                 <div class="animated-info">
@@ -87,8 +92,8 @@
                         <p>Building a successful product is a challenge. I am highly energetic in user experience design, interfaces and Back-end development.</p>
                         
                         <div class="custom-btn-group mt-4">
-                          <a href="#" class="btn mr-lg-2 custom-btn"><i class='uil uil-file-alt'></i> Download Resume</a>
-                          <a href="#contact" class="btn custom-btn custom-btn-bg custom-btn-link">Get a free quote</a>
+                          <a href="/resume" class="btn mr-lg-2 custom-btn"><i class='uil uil-file-alt'></i> Download Resume</a>
+                          <a href="/blogs" class="btn custom-btn custom-btn-bg custom-btn-link">Tech Blogs</a>
                         </div>
                     </div>
                 </div>
@@ -235,8 +240,7 @@
           <div class="col-lg-6 col-12">
             <div class="contact-form">
               <h2 class="mb-4">Interested to work together? Let's talk</h2>
-
-              <form action="" method="get">
+              <form action="/contact" method="post">
                 <div class="row">
                   <div class="col-lg-6 col-12">
                     <input type="text" class="form-control" name="name" placeholder="Your Name" id="name">
