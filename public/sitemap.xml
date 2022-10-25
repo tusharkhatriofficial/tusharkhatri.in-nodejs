@@ -9,12 +9,22 @@
 
 <url>
   <loc>https://www.tusharkhatri.in/</loc>
-  <lastmod>2022-10-25T14:09:17+00:00</lastmod>
+  <lastmod>2022-10-25T19:06:41+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
+  <loc>https://www.tusharkhatri.in/projects</loc>
+  <lastmod>2022-10-25T19:06:41+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
   <loc>https://www.tusharkhatri.in/resume</loc>
-  <lastmod>2022-10-25T14:09:17+00:00</lastmod>
+  <lastmod>2022-10-25T19:06:41+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.tusharkhatri.in/contact</loc>
+  <lastmod>2022-10-25T19:06:41+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 
