@@ -1,10 +1,10 @@
 {
   "name": "node-starter-template",
   "version": "1.0.0",
-  "description": "",
+  "description": "Full-stack personal portfolio website",
   "main": "index.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "nodemon server.js"
   },
   "author": "Tushar Khatri",
   "license": "ISC",
@@ -14,6 +14,8 @@
     "ejs": "^3.1.8",
     "express": "^4.18.1",
     "googleapis": "^108.0.0",
+    "node-fetch": "^3.2.10",
     "nodemailer": "^6.8.0"
-  }
+  },
+  "type": "module"
 }

@@ -7,5 +7,25 @@
 }
 
 .success-color {
-    color: greenyellow;
+    background-color: greenyellow;
+    margin: 0 10rem 0 10rem;
+    border-radius: 10px;
 }
+
+.image-404{
+    height: 30rem;
+}
+
+@media only screen and (max-width: 600px) {
+
+    .success-color {
+        background-color: greenyellow;
+        margin: 0 3rem 0 3rem;
+        border-radius: 10px;
+    }
+
+    .image-404{
+        height: 20rem;
+    }
+
+  }

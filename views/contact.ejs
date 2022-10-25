@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="You can contact Tushar Khatri through his email hello@tusharkhatri.in or fill out the given form to directly drop him a message.">
+    <meta name="keywords" content="Tushar's contact, Contact Tushar Khatri, Tushar Khatri contact, tusharkhatri.in contact, contact, mode.js, full-stack developer, back-end developer">
+    <meta name="author" content="Tushar Khatri">
+    <meta name="google-site-verification" content="JX5ZbU1nxYBYMJ28kEfCR0hA9qqWVYSVL2_GB-rKaWA" />
+
+    <title>Contact Me | Tushar Khatri</title>
+    <link rel="icon" href="/images/favicon.ico">
+
+  
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/unicons.css">
+    <link rel="stylesheet" href="/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="/css/owl.theme.default.min.css">
+
+    <!-- MAIN STYLE -->
+    <link rel="stylesheet" href="/css/tooplate-style.css">
+    <link rel="stylesheet" href="/css/master.css">
+    
+<!--
+
+-->
+<!-- Script for google ads -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6959833510936728"
+     crossorigin="anonymous"></script>
+  </head>
+  <body>
+
+    <!-- MENU -->
+    <%- include('partials/menu'); %>
+
+
+    <!-- displaying the success message -->
+    <center>
+        <% if(messageSent){ %>
+            <div class="alert alert-success" role="alert">
+                Thanks for reaching out, will get in touch soon!
+              </div>
+          <% } %>
+    </center>
+
+   <!-- CONTACT -->
+   <section class="contact py-5" id="contact">
+    <div class="container">
+      <div class="row">
+        
+        <div class="col-lg-5 mr-lg-5 col-12">
+          <div class="google-map w-100">
+
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14016.678758484692!2d76.90291568011078!3d28.564666769111916!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d12228b72e56d%3A0x57a277a0a60b2b6e!2sUjwa%2C%20New%20Delhi%2C%20Delhi%20110073!5e0!3m2!1sen!2sin!4v1666711610154!5m2!1sen!2sin" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+
+          <div class="contact-info d-flex justify-content-between align-items-center py-4 px-lg-5">
+              <div class="contact-info-item">
+                <h3 class="mb-3 text-white">Say hello</h3>
+                <p class="footer-text mb-0">+91 99682 90156</p>
+                <p><a href="mailto:hello@tusharkhatri.in">hello@tusharkhatri.in</a></p>
+              </div>
+
+              <ul class="social-links">
+                   <li><a href="https://instagram.com/tusharkhatri.in" target=”_blank” class="uil uil-instagram" data-toggle="tooltip" data-placement="left" title="Instagram"></a></li>
+                   <li><a href="https://www.youtube.com/channel/UCcgYO9UkTyvozoFMXRfnN6g" target=”_blank” class="uil uil-youtube" data-toggle="tooltip" data-placement="left" title="Youtube"></a></li>
+              </ul>
+          </div>
+        </div>
+
+        <div class="col-lg-6 col-12">
+          <div class="contact-form">
+            <h2 class="mb-4">Interested to work together? Let's talk</h2>
+            <form action="/contact" method="post">
+              <div class="row">
+                <div class="col-lg-6 col-12">
+                  <input type="text" class="form-control" name="name" placeholder="Your Name" id="name">
+                </div>
+
+                <div class="col-lg-6 col-12">
+                  <input type="email" class="form-control" name="email" placeholder="Email" id="email">
+                </div>
+
+                <div class="col-12">
+                  <textarea name="message" rows="6" class="form-control" id="message" placeholder="Message"></textarea>
+                </div>
+
+                <div class="ml-lg-auto col-lg-5 col-12">
+                  <input type="submit" class="form-control submit-btn" value="Send">
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- footer -->
+  <%-include('partials/footer')%>
+
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/Headroom.js"></script>
+    <script src="js/jQuery.headroom.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/smoothscroll.js"></script>
+    <script src="js/custom.js"></script>
+
+  </body>
+</html>
