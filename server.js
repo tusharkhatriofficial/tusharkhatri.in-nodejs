@@ -136,7 +136,8 @@ app.post("/contact", (req, res) => {
 
 //listen to port
 app.listen(process.env.PORT || 3000, () => {
-  console.log("Server is up and running on port 3000");
+  const port = process.env.PORT;
+  console.log(`Server is up and running on port ${port}`);
 });
 
 
