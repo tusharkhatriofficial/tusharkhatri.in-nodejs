@@ -19,6 +19,7 @@
 
     <!-- MAIN STYLE -->
     <link rel="stylesheet" href="/css/tooplate-style.css">
+    <link rel="stylesheet" href="/css/blog-card.css">
     <link rel="stylesheet" href="/css/master.css">
     
 <!--
@@ -49,11 +50,11 @@
                                 </div>
                         </h1>
 
-                        <p>Building a successful product is a challenge. I am highly energetic in user experience design, interfaces and Back-end development.</p>
+                        <p class="lead my-3">Building a successful product is a challenge. I am highly energetic in user experience design, interfaces and Back-end development.</p>
                         
                         <div class="custom-btn-group mt-4">
                           <a href="/resume" class="btn mr-lg-2 custom-btn"><i class='uil uil-file-alt'></i> Download Resume</a>
-                          <a href="/blogs" class="btn custom-btn custom-btn-bg custom-btn-link">Tech Blogs</a>
+                          <a href="https://www.udemy.com/user/tushar-khatri-16/" class="btn custom-btn custom-btn-bg custom-btn-link">Coding Courses</a>
                         </div>
                     </div>
                 </div>
@@ -67,6 +68,35 @@
             </div>
         </div>
     </section>
+
+
+    <!-- Hashnode blog section -->
+    <div class="container">
+    <% blogList.forEach( (post) =>{ %>
+
+                    <div class="card">
+                      <div class="card__header">  
+                        <a href="https://blog.tusharkhatri.in/<%=post.slug%>"><img src="<%=post.coverImage%>" alt="<%=post.title%>" class="card__image" width="600"></a>
+                      </div>
+                      <div class="card__body">
+                        <!-- <span class="tag" style="background-color: #FFC007;">Follow on GitHub</span> -->
+                        <h4 class="text-dark"><%=post.title%></h4>
+                        <p><%=post.brief%><span style="color: #FFC007;"><br><a href="https://blog.tusharkhatri.in/<%=post.slug%>">Read more...</a></span></p>
+                      </div>
+                      <div class="card__footer">
+                        <div class="user">
+                          <img src="images/logo.png" alt="Tushar Khatri" class="user__image">
+                          <div class="user__info">
+                            <h5 class="text-dark">Tushar Khatri</h5>
+                            <small><%-new Date(post.dateAdded).getDate();%> -</small>
+                            <small><%-new Date(post.dateAdded).getMonth();%> -</small>
+                            <small><%-new Date(post.dateAdded).getFullYear();%></small>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+     <% }); %>  
+    </div>
 
 
     <!-- footer -->

@@ -1,4 +1,5 @@
 //imports
+import { copyFileSync } from 'fs';
 import { createRequire } from 'module';
 const require = createRequire(import.meta.url);
 require('dotenv').config()
@@ -56,35 +57,53 @@ async function sendMail(senderName, senderEmail, senderMessage){
 
 //setup to fetch blog data from hashnode api and display on the home page
 
-// function fetchBlogs(){
+async function fetchHashnodeBlog(){
 
-//   const query = `query {
-//     user(username: "tusharkhatri"){
-//       publication{
-//         posts(page:0){
-//           title
-//         }
-//       }
-//     }
-//   }`;
-  
-//   const opts = {
-//     method: 'POST',
-//     headers:  { 'content-type': 'application/json' },
-//     body: JSON.stringify( {query} )
-//   }
+  const variables = { page: 0 };
 
-//   fetch('https://api.hashnode.com', opts)
-//  .then(res => res.json())
-//  .then(res => console.log(res));
-// }
+  const query = `
+  query GetUserArticles($page: Int!) {
+    user(username: "tusharkhatri") {
+        publication {
+            posts(page: $page) {
+                title
+                brief
+                slug
+                coverImage
+                dateAdded
+            }
+        }
+    }
+}
+`;
 
-// fetchBlogs();
+
+  const data = await fetch("https://api.hashnode.com/", {
+    method: "POST",
+    headers: {
+        "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+        query,
+        variables,
+    }),
+});
+
+const result = await data.json();
+//the actual post is nested deep down in the result object
+const articles = result.data.user.publication.posts;
+return articles;
+
+}
+
+
 
 
 //get requests
-app.get("/", (req, res) => {
-  res.render("home");
+app.get("/", async (req, res) => {
+  const blogList = await fetchHashnodeBlog();
+  
+  res.render("home", {blogList: blogList});
 });
 
 app.get("/blogs", (req, res) => {
