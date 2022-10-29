@@ -14,7 +14,7 @@ import fetch from 'node-fetch';
 
 //app.use
 app.set("view engine", "ejs");
-app.use(express.static("public"));
+app.use(express.static("public")); 
 app.use(bodyParser.urlencoded({extended: false}));
 app.use('/logo.png', express.static('images/logo.png'));
 
@@ -93,7 +93,6 @@ const result = await data.json();
 //the actual post is nested deep down in the result object
 const articles = result.data.user.publication.posts;
 return articles;
-
 }
 
 
@@ -134,6 +133,14 @@ app.get("/contact", (req, res) => {
   res.render("contact", {messageSent: false});
 });
 
+app.get("/privacy-policy", (req, res) => {
+  res.render("privacy-policy");
+});
+
+app.get("/terms&conditions", (req, res) => {
+  res.render("terms&conditions");
+});
+
 app.get("*", (req, res) => {
   res.render("404");
 });
@@ -158,22 +165,3 @@ app.listen(process.env.PORT || 3000, () => {
   const port = process.env.PORT;
   console.log(`Server is up and running on port ${port}`);
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
