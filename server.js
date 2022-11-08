@@ -10,6 +10,7 @@ const nodemailer = require("nodemailer");
 const { google } =  require("googleapis");
 const { oauth2 } = require("googleapis/build/src/apis/oauth2");
 import fetch from 'node-fetch';
+import { dirname } from 'path';
 
 
 //app.use
@@ -141,13 +142,17 @@ app.get("/terms&conditions", (req, res) => {
   res.render("terms&conditions");
 });
 
+app.get('/sitemap.xml', function(req, res) {
+  res.sendFile('/sitemap.xml');
+});
+
+app.get('/ads.txt', function(req, res) {
+    res.sendFile('/ads.txt');
+});
+
 app.get("*", (req, res) => {
   res.render("404");
 });
-
-app.get('/sitemap.xml', function(req, res) {
-  res.sendFile('/sitemap.xml');
-  });
 
 
 //post requests
