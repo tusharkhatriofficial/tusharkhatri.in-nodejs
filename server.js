@@ -56,54 +56,100 @@ async function sendMail(senderName, senderEmail, senderMessage){
   }
 }
 
+
+// new api code testing
+// async function fetchHashnodeBlog() {
+//   const query = `
+//   query GetArticles {
+//       user(username: "tusharkhatri") {
+//           publication {
+//               posts {
+//                   title
+//                   brief
+//                   slug
+//                   coverImage
+//                   dateAdded
+//               }
+//           }
+//       }
+//   }
+//   `;
+
+//   const response = await fetch("https://api.hashnode.com", {
+//       method: "POST",
+//       headers: {
+//           "Content-Type": "application/json",
+//       },
+//       body: JSON.stringify({
+//           query,
+//       }),
+//   });
+
+//   const { data, errors } = await response.json();
+
+//   if (errors) {
+//       throw new Error(errors.map(error => error.message).join('\n'));
+//   }
+
+//   if (!data || !data.user || !data.user.publication || !data.user.publication.posts) {
+//       throw new Error("Failed to fetch articles from Hashnode API.");
+//   }
+
+//   const articles = data.user.publication.posts;
+//   return articles;
+// }
+
+
 //setup to fetch blog data from hashnode api and display on the home page
 
-async function fetchHashnodeBlog(){
+// async function fetchHashnodeBlog(){
 
-  const variables = { page: 0 };
+//   const variables = { page: 0 };
 
-  const query = `
-  query GetUserArticles($page: Int!) {
-    user(username: "tusharkhatri") {
-        publication {
-            posts(page: $page) {
-                title
-                brief
-                slug
-                coverImage
-                dateAdded
-            }
-        }
-    }
-}
-`;
+//   const query = `
+//   query GetUserArticles($page: Int!) {
+//     user(username: "tusharkhatri") {
+//         publication {
+//             posts(page: $page) {
+//                 title
+//                 brief
+//                 slug
+//                 coverImage
+//                 dateAdded
+//             }
+//         }
+//     }
+// }
+// `;
 
 
-  const data = await fetch("https://api.hashnode.com/", {
-    method: "POST",
-    headers: {
-        "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-        query,
-        variables,
-    }),
-});
+//   const data = await fetch("https://api.hashnode.com/", {
+//     method: "POST",
+//     headers: {
+//         "Content-Type": "application/json",
+//     },
+//     body: JSON.stringify({
+//         query,
+//         variables,
+//     }),
+// });
 
-const result = await data.json();
-//the actual post is nested deep down in the result object
-const articles = result.data.user.publication.posts;
-return articles;
-}
+// const result = await data.json();
+// //the actual post is nested deep down in the result object
+// const articles = result.data.user.publication.posts;
+// return articles;
+// }
 
 
 
 
 //get requests
 app.get("/", async (req, res) => {
-  const blogList = await fetchHashnodeBlog();
+  // const blogList = await fetchHashnodeBlog();
   
-  res.render("home", {blogList: blogList});
+  // res.render("home", {blogList: blogList});
+  
+  res.render("home");
 });
 
 app.get("/blogs", (req, res) => {
